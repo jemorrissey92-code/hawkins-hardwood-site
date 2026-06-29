@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Hawkins Hardwood Flooring — Dustless sanding, custom stain matching, and premium finishes trusted by homeowners across Rhode Island and Southeastern Massachusetts."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hawkins Hardwood Flooring",
+      "image": "/og-image.jpg",
+      "telephone": "+14014865587",
+      "email": "John@hawkinshardwoodflooring.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5 Stephen Street",
+        "addressLocality": "Smithfield",
+        "addressRegion": "RI",
+        "postalCode": "02828",
+        "addressCountry": "US"
+      },
+      "url": "https://hawkinshardwoodflooring.com",
+      "foundingDate": "2015",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "50"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "08:00", "closes": "17:00" }
+      ],
+      "paymentAccepted": "Cash, Check, Credit Card",
+      "areaServed": ["Rhode Island", "Southeastern Massachusetts"]
+    })} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

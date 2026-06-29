@@ -1,0 +1,57 @@
+---
+const faqs = [
+  {
+    question: 'How effective is dustless sanding?',
+    answer: 'Our dustless sanding system captures 99% of airborne dust particles. While no system is 100% dust-free, our equipment dramatically reduces mess compared to traditional sanding, keeping your home cleaner and the air safer during the refinishing process.',
+  },
+  {
+    question: 'How long does refinishing take?',
+    answer: 'A typical refinishing project takes 2-4 days depending on the size of the area, the number of coats needed, and the type of finish selected. We\'ll give you a clear timeline during your free estimate.',
+  },
+  {
+    question: 'How soon can I walk on my floors after refinishing?',
+    answer: 'You can walk on your floors in socks within 24 hours of the final coat. Full cure time is typically 72 hours. We recommend waiting 2 weeks before placing rugs or heavy furniture.',
+  },
+  {
+    question: 'What finish is best for homes with pets or kids?',
+    answer: 'We recommend Bona Traffic HD — a commercial-grade, water-based polyurethane that provides exceptional durability and scratch resistance. It\'s low-odor, dries quickly, and holds up beautifully to everyday wear.',
+  },
+  {
+    question: 'How do I know if my floors need refinishing or replacing?',
+    answer: 'If your floors have surface scratches, fading, or worn finish, refinishing is usually the way to go. If there\'s deep water damage, structural warping, or the wood has been sanded too many times, replacement may be needed. We\'ll assess during your free estimate and give you honest advice.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer: 'We serve all of Rhode Island and Southeastern Massachusetts, including Providence, Warwick, Cranston, Pawtucket, East Greenwich, Smithfield, North Kingstown, and surrounding communities.',
+  },
+];
+---
+
+<section id="faqs" class="py-20 lg:py-28 bg-surface">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Common Questions</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <!-- FAQ items -->
+    <div class="space-y-4">
+      {faqs.map((faq, i) => (
+        <details class="group bg-surface-warm rounded-default border border-border overflow-hidden" open={i === 0}>
+          <summary class="flex items-center justify-between cursor-pointer p-6 text-left">
+            <h3 class="font-display text-base text-ink-strong pr-4">{faq.question}</h3>
+            <svg class="w-5 h-5 text-accent flex-shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p class="text-muted leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

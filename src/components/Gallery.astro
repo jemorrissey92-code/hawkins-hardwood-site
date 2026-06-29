@@ -1,0 +1,63 @@
+---
+const projects = [
+  { title: 'Kitchen Refinish', location: 'Providence, RI', type: 'Refinishing' },
+  { title: 'Living Room Install', location: 'Warwick, RI', type: 'Installation' },
+  { title: 'Custom Dark Stain', location: 'Cranston, RI', type: 'Staining' },
+  { title: 'Whole Home Refinish', location: 'East Greenwich, RI', type: 'Refinishing' },
+  { title: 'Bedroom Hardwood', location: 'Smithfield, RI', type: 'Installation' },
+  { title: 'Entryway Repair', location: 'Pawtucket, RI', type: 'Repair' },
+];
+---
+
+<section id="gallery" class="py-20 lg:py-28 bg-surface-warm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Our Work</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight mb-4">
+        Before & After Gallery
+      </h2>
+      <p class="text-muted text-lg max-w-2xl mx-auto">
+        Real results from real Rhode Island homes. Every project reflects our commitment to quality craftsmanship.
+      </p>
+    </div>
+
+    <!-- Gallery grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <div class="group relative overflow-hidden rounded-lg bg-white border border-border">
+          <!-- Image placeholder -->
+          <div class="aspect-[4/3] bg-gradient-to-br from-accent/10 via-surface-warm to-border flex items-center justify-center">
+            <div class="text-center">
+              <svg class="w-12 h-12 text-accent/30 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              <p class="text-muted text-xs">Project photo</p>
+            </div>
+          </div>
+
+          <!-- Overlay on hover -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+            <div class="p-5">
+              <h3 class="font-display text-lg text-white">{project.title}</h3>
+              <p class="text-white/70 text-sm">{project.location}</p>
+            </div>
+          </div>
+
+          <!-- Tag -->
+          <div class="absolute top-3 right-3">
+            <span class="bg-white/90 backdrop-blur-sm text-ink text-xs font-medium px-2.5 py-1 rounded-full">
+              {project.type}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- View more -->
+    <div class="text-center mt-12">
+      <a href="#contact" class="inline-flex items-center bg-accent text-white font-bold text-sm px-8 py-3.5 rounded-default hover:bg-accent-dark transition-colors">
+        See More Projects
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </div>
+  </div>
+</section>

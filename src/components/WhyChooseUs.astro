@@ -1,0 +1,71 @@
+---
+const features = [
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+    title: 'Experienced Craftsmen',
+    description: 'Over 10 years serving Rhode Island and nearby Massachusetts with skilled, detail-first workmanship.',
+    stat: '10+',
+    statLabel: 'Years',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`,
+    title: 'Superior Quality',
+    description: 'Dust-controlled sanding, commercial-grade finishes, precision installs, custom staining, and expert repairs.',
+    stat: '99%',
+    statLabel: 'Dustless',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`,
+    title: 'Professional & Reliable',
+    description: 'Licensed and insured, family-run, and built on straightforward communication and clean job sites.',
+    stat: '5.0',
+    statLabel: 'Stars',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" /></svg>`,
+    title: 'Satisfaction Guaranteed',
+    description: 'Consistent 5-star reviews backed by a process that protects your home and delivers a finish that lasts.',
+    stat: '50+',
+    statLabel: 'Reviews',
+  },
+  {
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    title: 'Free Estimates',
+    description: "No-pressure estimates and clear guidance on options, timelines, and what's worth doing (and what isn't).",
+    stat: '$0',
+    statLabel: 'Estimates',
+  },
+];
+---
+
+<section id="why-us" class="py-20 lg:py-28 bg-surface-warm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Why Choose Us</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight">
+        Rhode Island & Massachusetts
+      </h2>
+    </div>
+
+    <!-- Feature grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+      {features.map(feature => (
+        <div class="bg-white rounded-default p-6 border border-border hover:shadow-lg transition-shadow group">
+          <!-- Stat badge -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-accent/10 rounded-default flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+              <Fragment set:html={feature.icon} />
+            </div>
+            <div>
+              <span class="block font-display text-2xl text-ink-strong leading-none">{feature.stat}</span>
+              <span class="text-xs text-muted uppercase tracking-wide font-medium">{feature.statLabel}</span>
+            </div>
+          </div>
+          <h3 class="font-display text-base text-ink-strong mb-2">{feature.title}</h3>
+          <p class="text-sm text-muted leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

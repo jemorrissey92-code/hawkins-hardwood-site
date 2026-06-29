@@ -1,0 +1,48 @@
+---
+const cities = [
+  'Providence', 'Warwick', 'Cranston', 'Pawtucket',
+  'East Greenwich', 'Smithfield', 'North Kingstown', 'Cumberland',
+  'Barrington', 'Bristol', 'Narragansett', 'Westerly',
+];
+---
+
+<section id="areas" class="py-20 lg:py-28 bg-surface-warm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Content -->
+      <div>
+        <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Service Areas</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight mb-6">
+          Proudly Serving Rhode Island & Massachusetts
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-8">
+          From Providence to the South County coast, we bring premium hardwood flooring services to homeowners across Rhode Island and Southeastern Massachusetts.
+        </p>
+
+        <!-- City chips -->
+        <div class="flex flex-wrap gap-2 mb-8">
+          {cities.map(city => (
+            <span class="inline-flex items-center gap-1.5 text-sm bg-white text-ink px-4 py-2 rounded-full border border-border font-medium">
+              <svg class="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+              {city}
+            </span>
+          ))}
+        </div>
+
+        <a href="#contact" class="inline-flex items-center bg-accent text-white font-bold text-sm px-8 py-3.5 rounded-default hover:bg-accent-dark transition-colors">
+          Check Your Area
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="aspect-square rounded-lg bg-white border border-border flex items-center justify-center">
+        <div class="text-center p-8">
+          <svg class="w-16 h-16 text-accent/30 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+          <p class="text-muted text-sm">Service area map</p>
+          <p class="text-muted/60 text-xs mt-1">Replace with embedded map</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

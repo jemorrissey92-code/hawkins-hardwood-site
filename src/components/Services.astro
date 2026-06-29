@@ -1,0 +1,87 @@
+---
+const services = [
+  {
+    number: '01',
+    title: 'New Hardwood Floor Installation',
+    description: 'Precision craftsmanship that elevates your entire home — expert layout design, thorough subfloor preparation, and seamless room-to-room transitions.',
+    details: ['Solid & engineered hardwood', 'Expert layout design', 'Subfloor preparation', 'Seamless transitions'],
+  },
+  {
+    number: '02',
+    title: 'Dustless Sanding & Floor Refinishing',
+    description: 'Restore the natural beauty of your hardwood floors without the traditional mess. Our dustless system captures 99% of airborne particles.',
+    details: ['99% dust containment', 'Commercial-grade finishes', 'Minimal disruption', 'Fast turnaround'],
+  },
+  {
+    number: '03',
+    title: 'Custom Hardwood Staining & Color Matching',
+    description: 'Bring out the exact tone and character you envision with on-site sample testing and custom color blending.',
+    details: ['On-site sample testing', 'Custom color blending', 'Match existing woodwork', 'Light natural to dark espresso'],
+  },
+  {
+    number: '04',
+    title: 'Expert Hardwood Floor Repairs',
+    description: 'From single-board replacements to deep scratch correction — we make floor damage disappear seamlessly.',
+    details: ['Board replacements', 'Scratch correction', 'Water damage repair', 'Gap filling'],
+  },
+  {
+    number: '05',
+    title: 'Maintenance & Screen and Recoat',
+    description: 'Protect your investment and extend the life of your hardwood with a fresh, commercial-grade topcoat that reinforces your existing finish.',
+    details: ['Extends floor life', 'Commercial-grade topcoat', 'Cost-effective', 'Quick process'],
+  },
+];
+---
+
+<section id="services" class="py-20 lg:py-28 bg-surface">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Our Services</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight mb-4">
+        What We Do Best
+      </h2>
+      <p class="text-muted text-lg max-w-2xl mx-auto">
+        From installation to refinishing, every project gets the same attention to detail and premium finish.
+      </p>
+    </div>
+
+    <!-- Services list -->
+    <div class="space-y-12 lg:space-y-16">
+      {services.map((service, i) => (
+        <div class={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center`}>
+          <!-- Photo placeholder -->
+          <div class="w-full lg:w-1/2">
+            <div class="aspect-[4/3] rounded-lg bg-gradient-to-br from-surface-warm to-border flex items-center justify-center overflow-hidden">
+              <div class="text-center p-8">
+                <span class="font-display text-6xl text-accent/20">{service.number}</span>
+                <p class="text-muted text-sm mt-2">Project photo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="w-full lg:w-1/2">
+            <div class="flex items-baseline gap-4 mb-4">
+              <span class="font-display text-5xl text-accent/20 leading-none">{service.number}</span>
+              <h3 class="font-display text-2xl lg:text-3xl text-ink-strong leading-tight">{service.title}</h3>
+            </div>
+            <p class="text-muted text-base leading-relaxed mb-6">{service.description}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {service.details.map(detail => (
+                <span class="inline-flex items-center gap-1.5 text-sm bg-surface-warm text-ink px-3 py-1.5 rounded-full border border-border">
+                  <svg class="w-3.5 h-3.5 text-success flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                  {detail}
+                </span>
+              ))}
+            </div>
+            <a href="#contact" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group">
+              Get a Quote
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
