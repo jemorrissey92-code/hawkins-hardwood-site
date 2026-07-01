@@ -1,11 +1,11 @@
 ---
 const projects = [
-  { title: 'Kitchen Refinish', location: 'Providence, RI', type: 'Refinishing' },
-  { title: 'Living Room Install', location: 'Warwick, RI', type: 'Installation' },
-  { title: 'Custom Dark Stain', location: 'Cranston, RI', type: 'Staining' },
-  { title: 'Whole Home Refinish', location: 'East Greenwich, RI', type: 'Refinishing' },
-  { title: 'Bedroom Hardwood', location: 'Smithfield, RI', type: 'Installation' },
-  { title: 'Entryway Repair', location: 'Pawtucket, RI', type: 'Repair' },
+  { title: 'Kitchen Refinish', location: 'Providence, RI', type: 'Refinishing', image: '/images/gallery-1.jpg' },
+  { title: 'Living Room Install', location: 'Warwick, RI', type: 'Installation', image: '/images/gallery-2.jpg' },
+  { title: 'Custom Dark Stain', location: 'Cranston, RI', type: 'Staining', image: '/images/gallery-3.jpg' },
+  { title: 'Whole Home Refinish', location: 'East Greenwich, RI', type: 'Refinishing', image: '/images/gallery-4.jpg' },
+  { title: 'Stain Samples', location: 'Smithfield, RI', type: 'Staining', image: '/images/gallery-5.jpg' },
+  { title: 'Finished Floor Detail', location: 'Pawtucket, RI', type: 'Refinishing', image: '/images/gallery-6.jpg' },
 ];
 ---
 
@@ -27,11 +27,8 @@ const projects = [
       {projects.map((project) => (
         <div class="group relative overflow-hidden rounded-lg bg-white border border-border">
           <!-- Image placeholder -->
-          <div class="aspect-[4/3] bg-gradient-to-br from-accent/10 via-surface-warm to-border flex items-center justify-center">
-            <div class="text-center">
-              <svg class="w-12 h-12 text-accent/30 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-              <p class="text-muted text-xs">Project photo</p>
-            </div>
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src={project.image} alt={`${project.title} - ${project.location}`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
 
           <!-- Overlay on hover -->
