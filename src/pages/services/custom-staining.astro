@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const faqs = [
+  {
+    question: 'Why do you test stain samples on-site instead of using a color chart?',
+    answer: 'Stain color shifts noticeably depending on wood species, grain, and the specific lighting in your home — a sample that looks perfect on a chart or a different floor can look completely different once it\'s down. We apply sample stains directly on a section of your actual wood, under your home\'s real lighting, so what you approve is what you get.',
+  },
+  {
+    question: 'Can you match new hardwood to my existing floors?',
+    answer: 'Yes — matching stain to existing hardwood, trim, or cabinetry is one of our most requested services. We test multiple sample blends on-site until the color and sheen line up with what\'s already in your home.',
+  },
+  {
+    question: 'What stain colors are most popular right now?',
+    answer: 'We see strong demand for both ends of the spectrum: warm natural and light tones that show off the wood\'s grain, and rich dark espresso and walnut tones for a more dramatic look. We\'ll bring physical samples so you can see real options against your space, not just a screen or a chart.',
+  },
+  {
+    question: 'Does stain color affect how durable the finish is?',
+    answer: 'The stain itself is primarily about color; durability comes mostly from the topcoat you choose. We pair any stain color with a commercial-grade finish option like Bona Traffic HD for households that need maximum wear resistance.',
+  },
+  {
+    question: 'How long does custom staining add to a project timeline?',
+    answer: 'On-site sample testing typically adds a short amount of time upfront, but it prevents costly redos later. Once a color is approved, staining fits into the normal refinishing or installation timeline we give you in your written estimate.',
+  },
+];
+
+const processSteps = [
+  { title: 'Discuss Your Vision', description: 'We talk through the look you\'re after — natural, warm, or dramatic dark tones — and bring physical samples to your home.' },
+  { title: 'On-Site Sample Testing', description: 'We apply real stain samples directly to your wood, viewed in your home\'s actual lighting throughout the day.' },
+  { title: 'Custom Color Blending', description: 'If needed, we blend stains to hit an exact match for existing floors, trim, or cabinetry.' },
+  { title: 'Apply & Protect', description: 'Once approved, we apply your chosen stain and seal it with a durable, commercial-grade finish.' },
+];
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Refinishing', description: 'Custom staining as part of a full sand-and-refinish project.', href: '/services/refinishing/' },
+  { title: 'Hardwood Floor Installation', description: 'Matching stain color across new hardwood installations.', href: '/services/installation/' },
+  { title: 'Hardwood Floor Repair', description: 'Blending stain on repaired or replaced boards to match the rest of your floor.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Custom Hardwood Stain Matching in Rhode Island | Hawkins Hardwood Flooring"
+  description="Custom hardwood stain matching in Rhode Island with on-site sample testing under your home's real lighting. Match existing floors or choose a brand-new color."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: 'Custom Stain Matching', href: '/services/custom-staining/' }]} />
+
+    <PageHero
+      eyebrow="Custom Stain Matching"
+      title="Custom Hardwood Stain Matching in Rhode Island"
+      description="Get the exact tone and character you envision with on-site sample testing, real lighting, and custom color blending — from light natural to dark espresso."
+      image="/images/stain-samples.webp"
+      imageAlt="Custom hardwood stain color samples tested on-site in a Rhode Island home"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Get the Exact Color You Want — Not a Close Guess
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Choosing a stain color from a small chip or a photo online is one of the most common ways a refinishing or installation project goes wrong. Wood species, grain pattern, and the specific light in your home all change how a stain color actually reads once it's down — a color that looked perfect on a sample board can look entirely different in your living room.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring solves this with on-site sample testing: we apply real stain samples directly to a section of your actual wood, and let you view the result in your home's real lighting — morning sun, afternoon shade, evening lamplight — before we commit to a final color.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Matching Existing Floors, Trim, or Cabinetry</h3>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Adding a room, repairing damaged boards, or blending an addition into existing hardwood all require the new wood to match what's already there. We test and blend stain combinations on-site until the color, tone, and sheen line up — so the transition disappears instead of standing out.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">From Light Natural to Dark Espresso</h3>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Whether you want to keep your floor's natural warmth, brighten a space with a lighter tone, or go dramatic with a rich espresso or walnut finish, we bring physical samples to your home so you're choosing based on how the color actually looks in your space — not a photo on a screen.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Built to Last</h3>
+        <p class="text-muted text-lg leading-relaxed">
+          Every custom stain is sealed with a durable, commercial-grade finish — including Bona Traffic HD for households with kids and pets — so your chosen color holds up to years of everyday life, not just the day it's installed.
+        </p>
+      </div>
+    </section>
+
+    <ProcessSteps steps={processSteps} heading="How Stain Matching Works" />
+
+    <FAQ faqs={faqs} eyebrow="Stain Matching FAQs" heading="Stain Matching Questions, Answered" id="faqs" />
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

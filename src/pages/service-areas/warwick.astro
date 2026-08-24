@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Installation', description: 'New hardwood for ranch and split-level Warwick homes.', href: '/services/installation/' },
+  { title: 'Dustless Floor Sanding', description: 'A cleaner sanding process for occupied family homes.', href: '/services/dustless-sanding/' },
+  { title: 'Custom Stain Matching', description: 'On-site sample testing to get your color exactly right.', href: '/services/custom-staining/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Refinishing in Warwick, RI | Hawkins Hardwood Flooring"
+  description="Hardwood floor refinishing in Warwick, RI. Dustless sanding, custom stain matching, and installation for Warwick's ranch, split-level, and coastal homes."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/service-areas/' }, { label: 'Warwick, RI', href: '/service-areas/warwick/' }]} />
+
+    <PageHero
+      eyebrow="Warwick, RI"
+      title="Hardwood Floor Refinishing in Warwick, RI"
+      description="Dustless sanding, refinishing, and new hardwood installation for Warwick's postwar ranches, split-levels, and coastal neighborhoods."
+      image="/images/gallery-2.jpg"
+      imageAlt="New hardwood floor installation in a Warwick, RI living room"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Hardwood Flooring for Warwick Homes
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          As Rhode Island's second-largest city, Warwick is home to a wide mix of housing — postwar ranch and split-level homes built during the mid-20th-century suburban boom, along with coastal neighborhoods like Warwick Neck, Oakland Beach, and Conimicut that bring their own moisture and humidity considerations for hardwood floors.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring works throughout Warwick refinishing original hardwood in longtime family homes, installing new floors in renovated ranches and split-levels, and helping coastal homeowners choose wood species and finishes suited to their local conditions.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Common Warwick Projects</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Refinishing original hardwood in postwar ranch and split-level homes.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Installing new hardwood during kitchen, family room, and full-home renovations.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Recommending wood species and finish options suited to coastal humidity near Warwick Neck and Oakland Beach.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Dustless sanding for occupied family homes near T.F. Green and busy residential neighborhoods.</span>
+          </li>
+        </ul>
+
+        <p class="text-muted text-lg leading-relaxed">
+          Whether your Warwick floors just need a refresh or you're planning a full renovation, our free in-home estimate gives you an honest read on what your floors need and a clear, written quote before any work begins.
+        </p>
+      </div>
+    </section>
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

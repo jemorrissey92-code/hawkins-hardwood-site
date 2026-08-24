@@ -1,0 +1,37 @@
+---
+interface LinkItem {
+  title: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  links: LinkItem[];
+  eyebrow?: string;
+  heading?: string;
+}
+
+const { links, eyebrow = 'Explore More', heading = 'Related Services' } = Astro.props;
+---
+
+<section class="py-16 lg:py-20 bg-surface border-t border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">{eyebrow}</p>
+      <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight">{heading}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {links.map((link) => (
+        <a href={link.href} class="block bg-surface-warm rounded-default border border-border p-6 hover:border-accent hover:shadow-lg transition-all group">
+          <h3 class="font-display text-base text-ink-strong mb-2 group-hover:text-accent transition-colors">{link.title}</h3>
+          <p class="text-sm text-muted leading-relaxed mb-3">{link.description}</p>
+          <span class="text-accent font-semibold text-sm inline-flex items-center gap-1">
+            Learn More
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

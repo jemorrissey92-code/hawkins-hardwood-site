@@ -1,5 +1,19 @@
 ---
-const faqs = [
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs?: FaqItem[];
+  eyebrow?: string;
+  heading?: string;
+  id?: string;
+  bgClass?: string;
+  withSchema?: boolean;
+}
+
+const defaultFaqs: FaqItem[] = [
   {
     question: 'How effective is dustless sanding?',
     answer: 'Our dustless sanding system captures 99% of airborne dust particles. While no system is 100% dust-free, our equipment dramatically reduces mess compared to traditional sanding, keeping your home cleaner and the air safer during the refinishing process.',
@@ -25,15 +39,39 @@ const faqs = [
     answer: 'We serve all of Rhode Island and Southeastern Massachusetts, including Providence, Warwick, Cranston, Pawtucket, East Greenwich, Smithfield, North Kingstown, and surrounding communities.',
   },
 ];
+
+const {
+  faqs = defaultFaqs,
+  eyebrow = 'Common Questions',
+  heading = 'Frequently Asked Questions',
+  id = 'faqs',
+  bgClass = 'bg-surface',
+  withSchema = true,
+} = Astro.props;
 ---
 
-<section id="faqs" class="py-20 lg:py-28 bg-surface">
+{withSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  })} />
+)}
+
+<section id={id} class={`py-20 lg:py-28 ${bgClass}`}>
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section header -->
     <div class="text-center mb-16">
-      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Common Questions</p>
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">{eyebrow}</p>
       <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight">
-        Frequently Asked Questions
+        {heading}
       </h2>
     </div>
 

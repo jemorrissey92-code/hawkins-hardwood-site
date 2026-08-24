@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import MobileCallBar from '../components/MobileCallBar.astro';
 
 interface Props {
   title: string;
@@ -10,6 +11,8 @@ const {
   title,
   description = "Hawkins Hardwood Flooring — Dustless sanding, custom stain matching, and premium finishes trusted by homeowners across Rhode Island and Southeastern Massachusetts."
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -22,6 +25,7 @@ const {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet" />
@@ -32,7 +36,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/og-image.png" />
-    <meta property="og:url" content="https://hawkinshardwoodflooring.com" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="Hawkins Hardwood Flooring" />
 
     <!-- Twitter Card -->
@@ -48,6 +52,44 @@ const {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Conversion event tracking: phone clicks, CTA clicks, form submissions -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        function track(name, params) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', name, params || {});
+          }
+        }
+
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            track('phone_click', {
+              link_url: link.getAttribute('href'),
+              page_location: window.location.pathname,
+            });
+          });
+        });
+
+        document.querySelectorAll('[data-gtag-event]').forEach(function (el) {
+          el.addEventListener('click', function () {
+            track(el.dataset.gtagEvent, {
+              cta_label: el.dataset.gtagLabel || el.textContent.trim(),
+              page_location: window.location.pathname,
+            });
+          });
+        });
+
+        document.querySelectorAll('form[data-gtag-event]').forEach(function (form) {
+          form.addEventListener('submit', function () {
+            track(form.dataset.gtagEvent, {
+              form_name: form.getAttribute('name') || 'contact',
+              page_location: window.location.pathname,
+            });
+          });
+        });
+      });
     </script>
 
     <!-- Schema.org LocalBusiness -->
@@ -80,7 +122,8 @@ const {
       "areaServed": ["Rhode Island", "Southeastern Massachusetts"]
     })} />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col pb-16 sm:pb-0">
     <slot />
+    <MobileCallBar />
   </body>
 </html>

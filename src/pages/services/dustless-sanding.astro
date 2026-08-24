@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const faqs = [
+  {
+    question: 'Is dustless sanding really dust-free?',
+    answer: 'No sanding process is completely dust-free, but our dustless system captures 99% of airborne dust at the source using sanders connected directly to a high-capacity vacuum and containment system. Traditional sanding, by comparison, coats every surface in your home — including closets, vents, and rooms far from where the work happens.',
+  },
+  {
+    question: 'Do I need to move out during dustless sanding?',
+    answer: 'No. Most homeowners stay in their homes throughout the project. Because dust is contained at the source rather than settling throughout the house, dustless sanding is much easier to live with, especially for families with young children, pets, or anyone with allergies or respiratory sensitivities.',
+  },
+  {
+    question: 'How should I prepare my home before dustless sanding starts?',
+    answer: 'Clear the work area of furniture, rugs, and breakables, and let us know about any HVAC returns in the room so we can seal them if needed. We\'ll walk you through a simple prep checklist during your free estimate so there are no surprises on start day.',
+  },
+  {
+    question: 'Is dustless sanding more expensive than traditional sanding?',
+    answer: 'Dustless sanding is competitively priced with traditional methods, and it typically saves you money overall once you factor in the time and cost of deep-cleaning a house coated in fine dust after a traditional sand job.',
+  },
+  {
+    question: 'Does dustless sanding work on all types of hardwood?',
+    answer: 'Yes — our dust-containment equipment works across solid and engineered hardwood species and finishes. We\'ll evaluate your specific floors during the estimate to confirm the right sanding approach and grit sequence.',
+  },
+];
+
+const processSteps = [
+  { title: 'Room Prep & Containment', description: 'We clear the work area and set up dust-containment equipment sealed to the sanding machines.' },
+  { title: 'Multi-Pass Sanding', description: 'Progressive grits remove old finish and level the wood while a vacuum system captures dust at the source.' },
+  { title: 'Fine Sanding & Buffing', description: 'A final fine-grit pass and buff prepares the bare wood surface for stain and finish.' },
+  { title: 'Clean Handoff', description: 'We leave the space clean and ready for staining and finishing — no household-wide dust cleanup.' },
+];
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Refinishing', description: 'The full refinishing process, from sanding through final finish coat.', href: '/services/refinishing/' },
+  { title: 'Custom Stain Matching', description: 'On-site sample testing to get your color exactly right.', href: '/services/custom-staining/' },
+  { title: 'Hardwood Floor Repair', description: 'Board replacement and damage repair ahead of sanding and refinishing.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Dustless Floor Sanding in Rhode Island | Hawkins Hardwood Flooring"
+  description="Dustless hardwood floor sanding in Rhode Island. Our dust-containment system captures 99% of airborne dust, keeping your home clean and livable during the project."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: 'Dustless Floor Sanding', href: '/services/dustless-sanding/' }]} />
+
+    <PageHero
+      eyebrow="Dustless Floor Sanding"
+      title="Dustless Floor Sanding in Rhode Island"
+      description="Refinish your hardwood without coating your home in dust. Our containment system captures 99% of airborne dust at the source."
+      image="/images/project-light.jpg"
+      imageAlt="Dustless hardwood floor sanding equipment in use in a Rhode Island home"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          What "Dustless" Actually Means
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Traditional floor sanding sends fine wood dust into the air, where it settles on every surface in your home — countertops, furniture, bedding, even inside closets and cabinets. It's one of the biggest reasons homeowners put off refinishing floors they know need it.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Dustless sanding solves that problem at the source. Our sanding equipment connects directly to a high-capacity vacuum and containment system that captures 99% of airborne dust as it's created, rather than letting it spread through your home's air and HVAC system. The result is a dramatically cleaner job site, a healthier environment while we work, and far less cleanup for you afterward.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Who Benefits Most</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Families with kids and pets</strong> — less airborne dust means a healthier space to keep living in while work is underway.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Anyone with allergies or respiratory sensitivities</strong> — reduced airborne particulate matters when you're breathing the same air all day.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Open-concept homes</strong> — where an unsealed room means dust traveling straight into the kitchen or living areas.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Anyone who dreads post-project cleanup</strong> — no wiping down every shelf and surface in the house after we leave.</span>
+          </li>
+        </ul>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Preparing Your Home</h3>
+        <p class="text-muted text-lg leading-relaxed">
+          A little prep goes a long way: clearing furniture and rugs from the work area, letting us know about vents or returns in the room, and making a plan for pets during the loudest phase of sanding. We'll cover all of it in detail during your free in-home estimate, so start day goes smoothly.
+        </p>
+      </div>
+    </section>
+
+    <ProcessSteps steps={processSteps} heading="The Dustless Sanding Process" />
+
+    <FAQ faqs={faqs} eyebrow="Dustless Sanding FAQs" heading="Dustless Sanding Questions, Answered" id="faqs" />
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

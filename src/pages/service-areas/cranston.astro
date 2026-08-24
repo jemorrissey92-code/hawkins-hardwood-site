@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Refinishing', description: 'Dustless sanding, custom stain, and durable finishes for worn hardwood.', href: '/services/refinishing/' },
+  { title: 'Hardwood Floor Installation', description: 'New hardwood for additions, renovations, and carpet replacements.', href: '/services/installation/' },
+  { title: 'Hardwood Floor Repair', description: 'Board replacement and repair for scratches, water damage, and gaps.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Refinishing in Cranston, RI | Hawkins Hardwood Flooring"
+  description="Hardwood floor refinishing in Cranston, RI. Dustless sanding, custom stain matching, and honest repair-or-refinish assessments for Cranston homes. Free estimates."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/service-areas/' }, { label: 'Cranston, RI', href: '/service-areas/cranston/' }]} />
+
+    <PageHero
+      eyebrow="Cranston, RI"
+      title="Hardwood Floor Refinishing in Cranston, RI"
+      description="Dustless sanding and custom stain matching for Cranston's mix of established neighborhoods and growing suburban homes."
+      image="/images/gallery-3.jpg"
+      imageAlt="Custom dark stain hardwood floor in a Cranston, RI home"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Hardwood Flooring for Cranston Homes
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          As Rhode Island's third-largest city, Cranston spans everything from established village neighborhoods like Auburn and Edgewood, with their older colonials and bungalows, to newer suburban developments further west with ranch and colonial-style homes built from the mid-20th century onward. That range means we see just about every kind of hardwood project the region has to offer.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring refinishes, repairs, and installs hardwood throughout Cranston, handling everything from restoring original oak floors in older village homes to installing new hardwood in growing families' additions and renovations.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Common Cranston Projects</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Refinishing original oak floors in older village-area homes near Auburn and Edgewood.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Installing new hardwood in additions and finished spaces for growing families in newer developments.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Custom dark stain and color matching for buyers updating a recently purchased home.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Repairing pet and water damage in busy family households.</span>
+          </li>
+        </ul>
+
+        <p class="text-muted text-lg leading-relaxed">
+          Whether you're preparing a Cranston home to sell, updating one you just bought, or simply ready to bring worn floors back to life, we start with a free in-home estimate and give you a clear, honest recommendation — refinish, repair, or full replacement.
+        </p>
+      </div>
+    </section>
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
