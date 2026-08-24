@@ -1,11 +1,11 @@
 ---
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'FAQs', href: '#faqs' },
-  { label: 'Service Areas', href: '#areas' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Why Us', href: '/#why-us' },
+  { label: 'Gallery', href: '/#gallery' },
+  { label: 'FAQs', href: '/#faqs' },
+  { label: 'Service Areas', href: '/service-areas/' },
+  { label: 'Contact', href: '/#contact' },
 ];
 ---
 
@@ -34,7 +34,7 @@ const navLinks = [
           </svg>
           (401) 486-5587
         </a>
-        <a href="#contact" class="hidden md:inline-flex bg-accent text-white font-bold text-sm px-6 py-2.5 rounded-default hover:bg-accent-dark transition-colors">
+        <a href="/#contact" data-gtag-event="cta_click" data-gtag-label="Header - Free Estimate" class="hidden md:inline-flex bg-accent text-white font-bold text-sm px-6 py-2.5 rounded-default hover:bg-accent-dark transition-colors">
           Free Estimate
         </a>
 
@@ -59,7 +59,7 @@ const navLinks = [
       <a href="tel:+14014865587" class="text-sm font-semibold text-accent py-2">
         Call (401) 486-5587
       </a>
-      <a href="#contact" class="bg-accent text-white font-bold text-sm px-6 py-3 rounded-default text-center hover:bg-accent-dark transition-colors mobile-nav-link">
+      <a href="/#contact" data-gtag-event="cta_click" data-gtag-label="Header Mobile - Free Estimate" class="bg-accent text-white font-bold text-sm px-6 py-3 rounded-default text-center hover:bg-accent-dark transition-colors mobile-nav-link">
         Get a Free Estimate
       </a>
     </nav>

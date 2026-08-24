@@ -1,0 +1,35 @@
+---
+interface Step {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  steps: Step[];
+  eyebrow?: string;
+  heading?: string;
+}
+
+const { steps, eyebrow = 'Our Process', heading = 'How It Works' } = Astro.props;
+---
+
+<section class="py-20 lg:py-28 bg-surface-warm">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">{eyebrow}</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-[2.6rem] text-ink-strong leading-tight">
+        {heading}
+      </h2>
+    </div>
+
+    <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((step, i) => (
+        <li class="relative">
+          <span class="font-display text-4xl text-accent/25 leading-none block mb-3">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="font-display text-base text-ink-strong mb-2">{step.title}</h3>
+          <p class="text-sm text-muted leading-relaxed">{step.description}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

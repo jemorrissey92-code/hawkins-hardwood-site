@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const faqs = [
+  {
+    question: 'Can a hardwood floor with water damage be repaired?',
+    answer: 'Often, yes — if the damage is limited to a few boards and caught before it spreads, we can remove and replace just the affected planks and blend them into the surrounding floor. Widespread water damage or long-term moisture exposure may call for a larger repair or partial replacement, which we\'ll assess honestly during your free estimate.',
+  },
+  {
+    question: 'Can you fix deep scratches or pet damage without replacing the whole floor?',
+    answer: 'In most cases, yes. Surface scratches and gouges from pets or furniture are typically corrected through spot sanding and refinishing of the affected area, or a full-room refinish if the damage is widespread. Deeper gouges into the wood may need individual board replacement.',
+  },
+  {
+    question: 'What causes gaps to form between hardwood boards?',
+    answer: 'Gaps usually come from seasonal humidity changes as wood naturally expands and contracts. Small seasonal gaps are normal, but larger or permanent gaps can be filled and blended so they\'re far less noticeable.',
+  },
+  {
+    question: 'How do you match repaired boards to the rest of my floor?',
+    answer: 'We source replacement wood as close as possible to your existing species and grain, then use on-site stain sample testing under your home\'s actual lighting to match color and sheen before final finishing.',
+  },
+  {
+    question: 'How do I know if it\'s a repair or a full refinish?',
+    answer: 'Isolated damage — a few scratched or damaged boards, a small water stain, a squeaky section — is usually a targeted repair. Widespread wear across the whole floor typically calls for a full refinish. We\'ll walk your floors with you and give it to you straight during your free in-home estimate.',
+  },
+];
+
+const processSteps = [
+  { title: 'Free Damage Assessment', description: 'We inspect the affected area in person and give you an honest repair-vs-refinish recommendation.' },
+  { title: 'Board Removal & Replacement', description: 'Damaged boards are carefully removed and replaced with wood matched to your existing floor.' },
+  { title: 'Blend Sanding', description: 'The repaired area is sanded to blend seamlessly with the surrounding hardwood.' },
+  { title: 'Stain & Finish Match', description: 'On-site sample testing ensures the repaired section matches your floor\'s color and sheen.' },
+];
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Refinishing', description: 'Full-floor refinishing when damage extends beyond a targeted repair.', href: '/services/refinishing/' },
+  { title: 'Custom Stain Matching', description: 'Getting repaired boards to disappear into your existing floor color.', href: '/services/custom-staining/' },
+  { title: 'Dustless Floor Sanding', description: 'Our dust-containment process, used for both repairs and full refinishing.', href: '/services/dustless-sanding/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Repair in Rhode Island | Hawkins Hardwood Flooring"
+  description="Hardwood floor repair in Rhode Island: water damage, deep scratches, pet damage, gaps, and board replacement. Honest repair-or-replace assessments, free estimates."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: 'Hardwood Floor Repair', href: '/services/repair/' }]} />
+
+    <PageHero
+      eyebrow="Hardwood Floor Repair"
+      title="Hardwood Floor Repair in Rhode Island"
+      description="Water damage, deep scratches, pet damage, or gaps between boards — we make hardwood floor damage disappear with targeted, matched repairs."
+      image="/images/project-dark.jpg"
+      imageAlt="Repaired hardwood flooring board section in a Rhode Island home"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Damaged Hardwood Doesn't Always Mean Replacement
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          A water leak near the dishwasher, deep scratches from moving furniture, pet claws that have worn through the finish, or boards that have started to gap and squeak — hardwood damage comes in a lot of forms, and it rarely means the whole floor needs to go. In most cases, a targeted repair restores the look and function of your floor for a fraction of the cost of replacement.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring repairs hardwood floors throughout Rhode Island and Southeastern Massachusetts, matching replacement boards to your existing wood species, grain, and finish so the repair blends in rather than standing out.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Common Repairs We Handle</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Water damage</strong> — from appliance leaks, plumbing issues, or flooring exposed to moisture, addressed before it spreads further.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Scratched or gouged boards</strong> — from furniture moves, pets, or years of daily wear.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Gaps between boards</strong> — from seasonal humidity swings, filled and blended for a more even look.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Single-board replacement</strong> — for isolated damage that doesn't warrant a full-room refinish.</span>
+          </li>
+        </ul>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Repair vs. Replacement: An Honest Assessment</h3>
+        <p class="text-muted text-lg leading-relaxed">
+          Not every damaged floor needs the same fix. Isolated issues — a handful of scratched boards, one water-stained section, a squeaky spot — are usually a targeted repair. Widespread structural damage, extensive water exposure, or wood that's been sanded past a safe thickness may call for replacement instead. We'll walk your floors with you in person and tell you plainly which category your project falls into, with no upsell.
+        </p>
+      </div>
+    </section>
+
+    <ProcessSteps steps={processSteps} heading="How Repairs Work" />
+
+    <FAQ faqs={faqs} eyebrow="Repair FAQs" heading="Repair Questions, Answered" id="faqs" />
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

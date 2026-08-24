@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const faqs = [
+  {
+    question: 'How do I know if my floors need refinishing or full replacement?',
+    answer: 'If your floors have surface scratches, fading, cupping, or a worn-out finish, refinishing is almost always the right call — it\'s faster and far less expensive than replacement. Replacement usually only makes sense with deep water damage, structural warping, or wood that has already been sanded down too many times to safely sand again. We give you an honest read on which situation you\'re in during your free estimate.',
+  },
+  {
+    question: 'Is dustless sanding actually dust-free?',
+    answer: 'No system is 100% dust-free, but our dustless sanding equipment captures 99% of airborne dust at the source. That means less cleanup, cleaner air while we work, and a home that\'s far more livable during the project compared to traditional sanding.',
+  },
+  {
+    question: 'Can I stay in my home while my floors are refinished?',
+    answer: 'Most homeowners do stay in their homes during refinishing, though we recommend staying off the finished floors themselves until each coat cures. We\'ll walk you through exactly what to expect for your specific project and timeline.',
+  },
+  {
+    question: 'How long does a refinishing project take?',
+    answer: 'A typical refinishing project takes 2-4 days depending on square footage, the number of coats, and the finish you choose. You\'ll get a clear, written timeline as part of your free estimate — no guessing.',
+  },
+  {
+    question: 'How soon can I put furniture back on refinished floors?',
+    answer: 'You can walk on refinished floors in socks within 24 hours of the final coat, with full cure typically taking about 72 hours. We recommend waiting two weeks before placing rugs or heavy furniture back down.',
+  },
+];
+
+const processSteps = [
+  { title: 'Free In-Home Estimate', description: 'We assess your floors in person, explain your options honestly, and provide a clear written quote.' },
+  { title: 'Dustless Sanding', description: 'We strip old finish and level the wood using dust-containment equipment that captures 99% of airborne dust.' },
+  { title: 'Stain & Finish', description: 'Choose your stain and finish — including Bona Traffic HD for maximum durability — applied with a precise, even hand.' },
+  { title: 'Final Walkthrough', description: 'We inspect every room with you and confirm your floors are ready before we leave the job site.' },
+];
+
+const relatedLinks = [
+  { title: 'Dustless Floor Sanding', description: 'How our dust-containment system keeps your home clean during the sanding phase.', href: '/services/dustless-sanding/' },
+  { title: 'Custom Stain Matching', description: 'On-site sample testing to match new finish to existing woodwork and trim.', href: '/services/custom-staining/' },
+  { title: 'Hardwood Floor Repair', description: 'Board replacement, scratch correction, and water damage repair before refinishing.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Refinishing in Rhode Island | Hawkins Hardwood Flooring"
+  description="Dustless hardwood floor refinishing in Rhode Island. Custom stain matching, commercial-grade finishes, and honest repair-or-refinish assessments. Free estimates."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: 'Hardwood Floor Refinishing', href: '/services/refinishing/' }]} />
+
+    <PageHero
+      eyebrow="Hardwood Floor Refinishing"
+      title="Hardwood Floor Refinishing in Rhode Island"
+      description="Restore worn, scratched, or dull hardwood with dustless sanding and a durable, commercial-grade finish — without the mess of traditional refinishing."
+      image="/images/gallery-1.jpg"
+      imageAlt="Freshly refinished hardwood floor in a Rhode Island kitchen"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Scratched, Dull, or Worn Hardwood?
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Years of foot traffic, furniture, pets, and sunlight take a visible toll on hardwood floors — surface scratches, a cloudy or peeling finish, faded color, and worn traffic patterns near doorways and hallways. The good news: in most cases, the wood underneath is still solid, and refinishing can bring it back to like-new condition for a fraction of what replacement would cost.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring refinishes hardwood floors throughout Rhode Island and Southeastern Massachusetts, from single rooms to whole-home projects. We sand down to bare wood, correct imperfections, and apply a new stain and finish that's built to hold up to everyday life.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Why Homeowners Choose Hawkins</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Dustless sanding process</strong> — 99% of airborne dust captured at the source, so your home stays livable during the project.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Family-run crew</strong> — licensed, insured, and on every job site from start to finish.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Durable finishes</strong> — including Bona Traffic HD, a commercial-grade, water-based polyurethane built for high-traffic homes with kids and pets.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Honest assessments</strong> — we'll tell you plainly when refinishing makes sense and when it doesn't.</span>
+          </li>
+        </ul>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">When Refinishing Is the Right Call</h3>
+        <p class="text-muted text-lg leading-relaxed mb-4">
+          Refinishing works well for floors with surface-level wear: scratches, dullness, minor discoloration, and worn finish near high-traffic areas. It's also the moment to change your floor's color entirely with a custom stain, or to correct minor gaps and squeaks along the way.
+        </p>
+        <p class="text-muted text-lg leading-relaxed">
+          If your floors have deep water damage, significant cupping or warping, or have already been sanded down close to the nail line, replacement or partial board repair may be the better path — something we'll flag clearly during your in-home estimate rather than sell you a refinish that won't hold up.
+        </p>
+      </div>
+    </section>
+
+    <ProcessSteps steps={processSteps} heading="How Refinishing Works" />
+
+    <FAQ faqs={faqs} eyebrow="Refinishing FAQs" heading="Refinishing Questions, Answered" id="faqs" />
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

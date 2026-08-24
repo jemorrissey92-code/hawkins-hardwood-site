@@ -1,8 +1,17 @@
 ---
 const cities = [
-  'Providence', 'Warwick', 'Cranston', 'Pawtucket',
-  'East Greenwich', 'Smithfield', 'North Kingstown', 'Cumberland',
-  'Barrington', 'Bristol', 'Narragansett', 'Westerly',
+  { name: 'Providence', href: '/service-areas/providence/' },
+  { name: 'Warwick', href: '/service-areas/warwick/' },
+  { name: 'Cranston', href: '/service-areas/cranston/' },
+  { name: 'Pawtucket', href: '/service-areas/' },
+  { name: 'East Greenwich', href: '/service-areas/' },
+  { name: 'Smithfield', href: '/service-areas/' },
+  { name: 'North Kingstown', href: '/service-areas/' },
+  { name: 'Cumberland', href: '/service-areas/' },
+  { name: 'Barrington', href: '/service-areas/' },
+  { name: 'Bristol', href: '/service-areas/' },
+  { name: 'Narragansett', href: '/service-areas/' },
+  { name: 'Westerly', href: '/service-areas/' },
 ];
 ---
 
@@ -22,17 +31,22 @@ const cities = [
         <!-- City chips -->
         <div class="flex flex-wrap gap-2 mb-8">
           {cities.map(city => (
-            <span class="inline-flex items-center gap-1.5 text-sm bg-white text-ink px-4 py-2 rounded-full border border-border font-medium">
+            <a href={city.href} class="inline-flex items-center gap-1.5 text-sm bg-white text-ink px-4 py-2 rounded-full border border-border font-medium hover:border-accent hover:text-accent transition-colors">
               <svg class="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
-              {city}
-            </span>
+              {city.name}
+            </a>
           ))}
         </div>
 
-        <a href="#contact" class="inline-flex items-center bg-accent text-white font-bold text-sm px-8 py-3.5 rounded-default hover:bg-accent-dark transition-colors">
-          Check Your Area
-          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
+        <div class="flex flex-wrap gap-4">
+          <a href="/service-areas/" class="inline-flex items-center bg-white text-ink border border-border font-bold text-sm px-8 py-3.5 rounded-default hover:border-accent hover:text-accent transition-colors">
+            View All Service Areas
+          </a>
+          <a href="#contact" class="inline-flex items-center bg-accent text-white font-bold text-sm px-8 py-3.5 rounded-default hover:bg-accent-dark transition-colors">
+            Check Your Area
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
       </div>
 
       <!-- Map placeholder -->

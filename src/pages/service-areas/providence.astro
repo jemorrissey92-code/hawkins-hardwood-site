@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const relatedLinks = [
+  { title: 'Hardwood Floor Refinishing', description: 'Dustless sanding, custom stain, and durable finishes for worn hardwood.', href: '/services/refinishing/' },
+  { title: 'Custom Stain Matching', description: 'Match new work to original hardwood and trim in older homes.', href: '/services/custom-staining/' },
+  { title: 'Hardwood Floor Repair', description: 'Board replacement and repair for floors with decades of history.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Refinishing in Providence, RI | Hawkins Hardwood Flooring"
+  description="Hardwood floor refinishing in Providence, RI. Dustless sanding and custom stain matching built for the city's historic homes and converted mill units. Free estimates."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Service Areas', href: '/service-areas/' }, { label: 'Providence, RI', href: '/service-areas/providence/' }]} />
+
+    <PageHero
+      eyebrow="Providence, RI"
+      title="Hardwood Floor Refinishing in Providence, RI"
+      description="Dustless sanding, custom stain matching, and honest repair-or-refinish assessments for Providence's historic homes, triple-deckers, and converted mill units."
+      image="/images/gallery-1.jpg"
+      imageAlt="Refinished hardwood floor in a Providence, RI kitchen"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Hardwood Flooring Built for Providence's Housing Stock
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Providence's neighborhoods — from the historic homes on the East Side and College Hill to the triple-deckers of Elmhurst, Mount Pleasant, and Silver Lake, to converted loft and mill-building units downtown — sit on some of the oldest hardwood floors in the state. Original fir, oak, and pine floors in these homes have often survived decades of wear, multiple owners, and more than one layer of finish.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring works throughout Providence refinishing original hardwood, matching stain color to existing trim and woodwork, repairing damaged boards in older floors, and installing new hardwood in renovated units and additions. We understand the character of century-old floors — and how to bring them back without sanding away the details that give them their charm.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Common Providence Projects</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed mb-6">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Restoring original hardwood in East Side and College Hill historic homes, often beneath old carpet or multiple prior finish coats.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Refinishing multi-unit triple-decker floors in neighborhoods like Elmhurst, Mount Pleasant, and Silver Lake.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Installing and finishing new hardwood in renovated downtown mill and loft-style units.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span>Dustless sanding for occupied multi-family buildings where dust control matters for shared spaces and neighboring units.</span>
+          </li>
+        </ul>
+
+        <p class="text-muted text-lg leading-relaxed">
+          Because our sanding system captures 99% of airborne dust, it's especially well suited to occupied Providence multi-families and condo buildings, where traditional sanding dust can spread beyond a single unit. Every project starts with a free, honest in-home estimate — including a clear read on whether your floors need a full refinish, a targeted repair, or something in between.
+        </p>
+      </div>
+    </section>
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

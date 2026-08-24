@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProcessSteps from '../../components/ProcessSteps.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import Contact from '../../components/Contact.astro';
+
+const faqs = [
+  {
+    question: 'Solid or engineered hardwood — which should I choose?',
+    answer: 'Solid hardwood can be sanded and refinished many times over its life and works well above grade. Engineered hardwood is more dimensionally stable, handles humidity and temperature swings better, and can go in spaces where solid wood is riskier, like over concrete slabs or on lower levels. We\'ll help you weigh the right choice for your home and budget during your free estimate.',
+  },
+  {
+    question: 'Do you handle subfloor preparation?',
+    answer: 'Yes. Proper subfloor prep — checking for level, moisture, and structural soundness — is the foundation of a hardwood install that stays flat and quiet for decades. We assess and prepare your subfloor as part of every installation project.',
+  },
+  {
+    question: 'How long does a new hardwood installation take?',
+    answer: 'Timelines depend on square footage, wood species, and layout complexity, but most residential installations take several days to a couple of weeks. You\'ll get a specific timeline as part of your written estimate.',
+  },
+  {
+    question: 'Can you match new hardwood to existing flooring in my home?',
+    answer: 'Yes — matching species, plank width, and stain color to existing hardwood is one of our specialties. We do on-site sample testing under your home\'s actual lighting to get the transition as seamless as possible.',
+  },
+  {
+    question: 'What finish options do I have for new hardwood?',
+    answer: 'From natural, low-sheen finishes to rich custom stains and durable commercial-grade topcoats like Bona Traffic HD, you have full control over the final look and durability of your new floors.',
+  },
+];
+
+const processSteps = [
+  { title: 'Free In-Home Estimate', description: 'We measure your space, discuss wood species and layout, and provide a clear written quote.' },
+  { title: 'Subfloor Preparation', description: 'We check for level, moisture, and structural issues and correct them before a single board goes down.' },
+  { title: 'Precision Installation', description: 'Expert layout design and careful installation for tight seams and seamless room-to-room transitions.' },
+  { title: 'Sand, Stain & Finish', description: 'New hardwood is sanded smooth and finished with your chosen stain and protective topcoat.' },
+];
+
+const relatedLinks = [
+  { title: 'Custom Stain Matching', description: 'Match new hardwood to existing floors or trim with on-site sample testing.', href: '/services/custom-staining/' },
+  { title: 'Hardwood Floor Refinishing', description: 'Bring older hardwood back to life with dustless sanding and a fresh finish.', href: '/services/refinishing/' },
+  { title: 'Hardwood Floor Repair', description: 'Board replacement and repair for existing hardwood before or after a new install.', href: '/services/repair/' },
+];
+---
+
+<Layout
+  title="Hardwood Floor Installation in Rhode Island | Hawkins Hardwood Flooring"
+  description="New hardwood floor installation in Rhode Island. Expert layout design, subfloor preparation, and seamless transitions from a licensed, insured family-run team."
+>
+  <Header />
+  <main>
+    <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: 'Hardwood Floor Installation', href: '/services/installation/' }]} />
+
+    <PageHero
+      eyebrow="Hardwood Floor Installation"
+      title="Hardwood Floor Installation in Rhode Island"
+      description="New solid or engineered hardwood, installed with precise layout design, proper subfloor prep, and a finish built to last."
+      image="/images/gallery-2.jpg"
+      imageAlt="Newly installed hardwood flooring in a Rhode Island living room"
+    />
+
+    <section class="py-20 lg:py-28 bg-surface">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl sm:text-3xl text-ink-strong leading-tight mb-6">
+          Ready to Add Real Hardwood to Your Home?
+        </h2>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Whether you're replacing worn carpet, extending hardwood into a new addition, or building a new home from the ground up, a new hardwood floor is one of the highest-impact upgrades you can make. It's also one where the details — subfloor prep, layout direction, expansion gaps, transitions — determine whether the floor looks great and stays quiet and flat for decades, or starts showing problems within a few years.
+        </p>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Hawkins Hardwood Flooring installs solid and engineered hardwood throughout Rhode Island and Southeastern Massachusetts, handling everything from wood selection through subfloor prep, installation, and final finish.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Choosing Wood Species & Style</h3>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          Red and white oak remain the most popular choices in New England homes for their durability and classic grain, but we also install maple, hickory, and other species depending on the look and budget you're after. Plank width, direction, and stain color all shape the final character of the room — we'll walk through the options and show physical samples so you're confident in your choice before we start.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Subfloor Prep Matters More Than You'd Think</h3>
+        <p class="text-muted text-lg leading-relaxed mb-6">
+          A hardwood floor is only as good as what's underneath it. We check subfloors for level, moisture content, and structural soundness before installation begins, correcting issues that would otherwise lead to squeaks, gaps, or an uneven surface down the road.
+        </p>
+
+        <h3 class="font-display text-xl text-ink-strong mb-4 mt-10">Why Homeowners Choose Hawkins</h3>
+        <ul class="space-y-3 text-muted text-base leading-relaxed">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Family-run, licensed, and insured</strong> — on every job site from start to finish.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Seamless room-to-room transitions</strong> — thoughtful layout planning at every doorway and threshold.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            <span><strong class="text-ink">Commercial-grade finishes</strong> — including Bona Traffic HD for maximum durability in busy households.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <ProcessSteps steps={processSteps} heading="How Installation Works" />
+
+    <FAQ faqs={faqs} eyebrow="Installation FAQs" heading="Installation Questions, Answered" id="faqs" />
+
+    <RelatedLinks links={relatedLinks} heading="Related Services" />
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

@@ -6,6 +6,7 @@ const services = [
     description: 'Precision craftsmanship that elevates your entire home — expert layout design, thorough subfloor preparation, and seamless room-to-room transitions.',
     details: ['Solid & engineered hardwood', 'Expert layout design', 'Subfloor preparation', 'Seamless transitions'],
     image: '/images/gallery-2.jpg',
+    href: '/services/installation/',
   },
   {
     number: '02',
@@ -13,6 +14,7 @@ const services = [
     description: 'Restore the natural beauty of your hardwood floors without the traditional mess. Our dustless system captures 99% of airborne particles.',
     details: ['99% dust containment', 'Commercial-grade finishes', 'Minimal disruption', 'Fast turnaround'],
     image: '/images/gallery-1.jpg',
+    href: '/services/refinishing/',
   },
   {
     number: '03',
@@ -20,6 +22,7 @@ const services = [
     description: 'Bring out the exact tone and character you envision with on-site sample testing and custom color blending.',
     details: ['On-site sample testing', 'Custom color blending', 'Match existing woodwork', 'Light natural to dark espresso'],
     image: '/images/stain-samples.webp',
+    href: '/services/custom-staining/',
   },
   {
     number: '04',
@@ -27,6 +30,7 @@ const services = [
     description: 'From single-board replacements to deep scratch correction — we make floor damage disappear seamlessly.',
     details: ['Board replacements', 'Scratch correction', 'Water damage repair', 'Gap filling'],
     image: '/images/project-dark.jpg',
+    href: '/services/repair/',
   },
   {
     number: '05',
@@ -34,6 +38,7 @@ const services = [
     description: 'Protect your investment and extend the life of your hardwood with a fresh, commercial-grade topcoat that reinforces your existing finish.',
     details: ['Extends floor life', 'Commercial-grade topcoat', 'Cost-effective', 'Quick process'],
     image: '/images/project-light.jpg',
+    href: '/services/dustless-sanding/',
   },
 ];
 ---
@@ -76,10 +81,16 @@ const services = [
                 </span>
               ))}
             </div>
-            <a href="#contact" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group">
-              Get a Quote
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            <div class="flex flex-wrap items-center gap-6">
+              <a href={service.href} class="inline-flex items-center text-ink-strong font-semibold hover:text-accent transition-colors group">
+                Learn More
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <a href="#contact" class="inline-flex items-center text-accent font-semibold hover:text-accent-dark transition-colors group">
+                Get a Quote
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
           </div>
         </div>
       ))}

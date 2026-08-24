@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Thank You | Hawkins Hardwood Flooring"
+  description="Thanks for requesting a free estimate from Hawkins Hardwood Flooring. Here's what happens next."
+>
+  <Header />
+  <main>
+    <section class="min-h-[70vh] flex items-center bg-surface-warm py-24">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <p class="text-accent text-xs font-semibold tracking-widest uppercase mb-3">Request Received</p>
+        <h1 class="font-display text-3xl sm:text-4xl text-ink-strong leading-tight mb-6">
+          Thanks — Your Estimate Request Is In
+        </h1>
+        <p class="text-muted text-lg leading-relaxed mb-4">
+          We typically respond within one business day. In the meantime, here's what happens next:
+        </p>
+        <ul class="text-left text-muted text-base leading-relaxed mb-10 space-y-3 max-w-md mx-auto">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            We'll review your project details and give you a call or email to confirm.
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            We'll schedule a free, no-pressure in-home visit to assess your floors.
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+            You'll get honest guidance on what's worth doing — and a clear, written estimate.
+          </li>
+        </ul>
+        <p class="text-muted text-sm mb-8">
+          Need to reach us sooner? Call <a href="tel:+14014865587" class="text-accent font-semibold hover:text-accent-dark">(401) 486-5587</a>.
+        </p>
+        <a href="/" class="inline-flex items-center bg-accent text-white font-bold text-sm px-8 py-3.5 rounded-default hover:bg-accent-dark transition-colors">
+          Back to Home
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,39 @@
+---
+interface Crumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+const base = 'https://hawkinshardwoodflooring.com';
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: crumb.label,
+    item: `${base}${crumb.href}`,
+  })),
+})} />
+
+<nav aria-label="Breadcrumb" class="bg-surface-warm border-b border-border">
+  <ol class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center gap-2 text-xs text-muted">
+    {crumbs.map((crumb, i) => (
+      <>
+        {i > 0 && <span class="text-border">/</span>}
+        {i === crumbs.length - 1 ? (
+          <span class="text-ink font-medium">{crumb.label}</span>
+        ) : (
+          <a href={crumb.href} class="hover:text-accent transition-colors">{crumb.label}</a>
+        )}
+      </>
+    ))}
+  </ol>
+</nav>
